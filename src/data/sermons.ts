@@ -1,0 +1,282 @@
+import type { Sermon } from "@/types/sermon";
+
+/**
+ * The canonical list of sermons.
+ *
+ * Pure data only — no queries or helpers belong here. For querying or sorting,
+ * import from `@/lib/sermons` instead.
+ */
+export const SERMONS: Sermon[] = [
+    {
+        slug: "the-god-who-keeps-covenant",
+        title: "The God who keeps covenant",
+        speaker: "Ps. Daniel Cruz",
+        speakerRole: "Lead Pastor",
+        date: "2026-05-18",
+        duration: "38 min",
+        series: "The God who keeps covenant",
+        topics: ["Covenant", "Faithfulness", "Old Testament"],
+        scripture: "Deuteronomy 7:9",
+        youtubeId: "xguwlvbG_XY",
+        featured: true,
+        summary:
+            "We open a new series on covenant by going back to the beginning — the kind of God who binds himself to a people. From Abraham to Sinai to the cross, every covenant points to a Father who keeps his word even when we don't.",
+        outline: [
+            { heading: "What is a covenant?", verse: "Genesis 15:9-18" },
+            { heading: "The pattern across Scripture", verse: "Hebrews 8:6-13" },
+            { heading: "A faithful God meets unfaithful people", verse: "Hosea 2:19-20" },
+            { heading: "The covenant kept in Christ", verse: "Luke 22:20" },
+        ],
+        questions: [
+            "When you hear the word 'covenant,' what comes to mind? How is it different from a contract?",
+            "Read Genesis 15. What does it mean that God passed through the pieces alone?",
+            "Where in your life are you tempted to relate to God like a contract rather than a covenant?",
+            "How does the cross reframe the way you think about God's faithfulness this week?",
+        ],
+        relatedResources: [
+            {
+                kind: "Reading Plan",
+                title: "Tracing covenant through the Old Testament",
+                description: "A daily journey from Eden to the prophets through every covenant moment.",
+                meta: "14 days · ~10 min/day",
+                href: "/resources",
+            },
+            {
+                kind: "Book",
+                title: "Covenants: God's Way with His People",
+                description: "O. Palmer Robertson's accessible primer on biblical covenant theology.",
+                meta: "320 pages",
+                href: "/resources",
+            },
+            {
+                kind: "Study Guide",
+                title: "The five covenants of Scripture",
+                description: "Printable guide that walks small groups through Noah, Abraham, Moses, David, and the New Covenant.",
+                meta: "PDF · 18 pages",
+                href: "/resources",
+            },
+        ],
+    },
+    {
+        slug: "promises-in-the-wilderness",
+        title: "Promises in the wilderness",
+        speaker: "Ps. Maria Lim",
+        speakerRole: "Teaching Pastor",
+        date: "2026-05-11",
+        duration: "41 min",
+        series: "The God who keeps covenant",
+        topics: ["Wilderness", "Promise", "Endurance"],
+        scripture: "Exodus 19:1-8",
+        youtubeId: "YKVWIbczI1s",
+        summary:
+            "Between Egypt and the promised land, God meets Israel in the desert. The wilderness isn't punishment — it's where covenant is forged. We trace how God speaks, provides, and shapes a people who will carry his name.",
+        outline: [
+            { heading: "The wilderness as classroom", verse: "Deuteronomy 8:2-5" },
+            { heading: "Provision before performance", verse: "Exodus 16:4" },
+            { heading: "The terms of belonging", verse: "Exodus 19:5-6" },
+        ],
+        questions: [
+            "What's a 'wilderness season' you've walked through? What did God teach you in it?",
+            "Why do you think God provides before he commands? What does that tell us about him?",
+            "Is there an area where you're trying to skip the wilderness? What would trust look like there?",
+        ],
+        relatedResources: [
+            {
+                kind: "Reading Plan",
+                title: "Exodus in 30 days",
+                description: "Walk from slavery to Sinai with daily readings and short reflections.",
+                meta: "30 days · ~12 min/day",
+                href: "/resources",
+            },
+            {
+                kind: "Article",
+                title: "Wilderness as classroom",
+                description: "A short essay from Ps. Maria Lim on what the desert teaches the soul.",
+                meta: "Article · 7 min read",
+                href: "/resources",
+            },
+            {
+                kind: "Podcast",
+                title: "Covenant conversations · Ep. 4",
+                description: "Deep dive into the manna, the rock, and the tabernacle as covenant signs.",
+                meta: "Podcast · 38 min",
+                href: "/resources",
+            },
+        ],
+    },
+    {
+        slug: "blood-stone-and-mercy",
+        title: "Blood, stone, and mercy",
+        speaker: "Ps. Daniel Cruz",
+        speakerRole: "Lead Pastor",
+        date: "2026-05-04",
+        duration: "36 min",
+        series: "The God who keeps covenant",
+        topics: ["Sacrifice", "Law", "Mercy"],
+        scripture: "Leviticus 16:15-22",
+        youtubeId: "abc1234567b",
+        summary:
+            "The sacrificial system can feel distant and strange to us. But underneath the blood and the tablets is a relentless mercy. We see how the old covenant carries seeds of the new and prepares us for the lamb who takes the world's sin away.",
+        outline: [
+            { heading: "Why blood matters", verse: "Leviticus 17:11" },
+            { heading: "The scapegoat carries it away", verse: "Leviticus 16:21-22" },
+            { heading: "From shadow to substance", verse: "Hebrews 10:1-10" },
+        ],
+        questions: [
+            "What does the sacrificial system reveal about the seriousness of sin?",
+            "How does Jesus fulfill both the sacrificed lamb and the scapegoat?",
+            "Is there a place in your life where you're still trying to atone for yourself? What would resting in Christ's finished work look like?",
+        ],
+        relatedResources: [
+            {
+                kind: "Study Guide",
+                title: "Leviticus made readable",
+                description: "Chapter-by-chapter primer with diagrams of the tabernacle and the Day of Atonement.",
+                meta: "PDF · 22 pages",
+                href: "/resources",
+            },
+            {
+                kind: "Book",
+                title: "The Day the Revolution Began",
+                description: "N. T. Wright on the cross, atonement, and the renewal of all things.",
+                meta: "440 pages",
+                href: "/resources",
+            },
+        ],
+    },
+    {
+        slug: "a-new-covenant-people",
+        title: "A new covenant people",
+        speaker: "Ps. James Aboitiz",
+        speakerRole: "Pastor of Mission",
+        date: "2026-04-27",
+        duration: "44 min",
+        series: "The God who keeps covenant",
+        topics: ["New Covenant", "Church", "Mission"],
+        scripture: "Jeremiah 31:31-34",
+        youtubeId: "abc1234567c",
+        summary:
+            "Jeremiah promises a covenant written not on stone but on the heart. We pick up that thread in Acts and see what it means to be a Spirit-filled, sent people — a covenant community for the sake of the world.",
+        outline: [
+            { heading: "A heart-level covenant", verse: "Jeremiah 31:33-34" },
+            { heading: "The Spirit poured out", verse: "Acts 2:38-39" },
+            { heading: "Carried to the ends of the earth", verse: "Acts 1:8" },
+        ],
+        questions: [
+            "What's the difference between obedience that comes from external law and obedience that comes from a transformed heart?",
+            "How have you experienced the Spirit's work in your own life recently?",
+            "Where is God sending you — your block, your team, your family — to embody covenant?",
+        ],
+        relatedResources: [
+            {
+                kind: "Reading Plan",
+                title: "Acts in 21 days",
+                description: "Follow the Spirit's movement from Jerusalem to the ends of the earth.",
+                meta: "21 days · ~8 min/day",
+                href: "/resources",
+            },
+            {
+                kind: "Podcast",
+                title: "Sent: how mission shapes us",
+                description: "Conversations with church planters from across our covenant network.",
+                meta: "Podcast · 6 episodes",
+                href: "/resources",
+            },
+            {
+                kind: "Article",
+                title: "What is a covenant community?",
+                description: "An intro to membership and belonging at Nexus.",
+                meta: "Article · 5 min read",
+                href: "/resources",
+            },
+        ],
+    },
+    {
+        slug: "living-the-beatitudes",
+        title: "Living the Beatitudes",
+        speaker: "Ps. Daniel Cruz",
+        speakerRole: "Lead Pastor",
+        date: "2026-04-20",
+        duration: "42 min",
+        series: "Living the Beatitudes",
+        topics: ["Sermon on the Mount", "Kingdom", "Character"],
+        scripture: "Matthew 5:1-12",
+        youtubeId: "abc1234567d",
+        summary:
+            "Jesus opens his most famous sermon by blessing the people the world overlooks. We walk through the Beatitudes and ask what it would look like for our church to actually live as a 'blessed are the…' people.",
+        outline: [
+            { heading: "Blessed are the poor in spirit", verse: "Matthew 5:3" },
+            { heading: "Blessed are those who mourn", verse: "Matthew 5:4" },
+            { heading: "Blessed are the meek", verse: "Matthew 5:5" },
+            { heading: "Blessed are those who hunger and thirst", verse: "Matthew 5:6" },
+        ],
+        questions: [
+            "Which Beatitude feels most foreign to how the world measures a 'blessed life'?",
+            "Which one does the Spirit seem to be pressing on you right now?",
+            "How could your small group practice one of the Beatitudes together this month?",
+        ],
+        relatedResources: [
+            {
+                kind: "Book",
+                title: "The Cost of Discipleship",
+                description: "Bonhoeffer's classic meditation on the Sermon on the Mount.",
+                meta: "320 pages",
+                href: "/resources",
+            },
+            {
+                kind: "Reading Plan",
+                title: "Sermon on the Mount in 14 days",
+                description: "Slow walk through Matthew 5–7 with daily reflection prompts.",
+                meta: "14 days · ~10 min/day",
+                href: "/resources",
+            },
+            {
+                kind: "Study Guide",
+                title: "Beatitudes for everyday life",
+                description: "Small-group friendly companion with practices for each Beatitude.",
+                meta: "PDF · 16 pages",
+                href: "/resources",
+            },
+        ],
+    },
+    {
+        slug: "faith-that-moves-cities",
+        title: "Faith that moves cities",
+        speaker: "Ps. Maria Lim",
+        speakerRole: "Teaching Pastor",
+        date: "2026-04-13",
+        duration: "35 min",
+        series: "Living the Beatitudes",
+        topics: ["Faith", "Mission", "City"],
+        scripture: "Matthew 5:13-16",
+        youtubeId: "abc1234567e",
+        summary:
+            "Salt and light aren't private virtues — they're a public posture. We unpack what it means to be a church for the city, not just in it, and the kind of faith that doesn't stay behind closed doors.",
+        outline: [
+            { heading: "Salt that hasn't lost its taste", verse: "Matthew 5:13" },
+            { heading: "Light on a hill", verse: "Matthew 5:14-15" },
+            { heading: "Good works that point home", verse: "Matthew 5:16" },
+        ],
+        questions: [
+            "Where are you already 'salt and light' without realizing it?",
+            "What keeps you from being more public with your faith at work or among neighbors?",
+            "Name one concrete way you could shine this week — small, specific, doable.",
+        ],
+        relatedResources: [
+            {
+                kind: "Book",
+                title: "Center Church",
+                description: "Tim Keller's framework for gospel ministry in urban contexts.",
+                meta: "400 pages",
+                href: "/resources",
+            },
+            {
+                kind: "Article",
+                title: "Loving the city you're in",
+                description: "Practical ways to bless your neighborhood without an agenda.",
+                meta: "Article · 6 min read",
+                href: "/resources",
+            },
+        ],
+    },
+];

@@ -30,7 +30,7 @@ export default function ResourcesTeaser() {
         <section className="px-4 md:px-8 py-12 md:py-20">
             <div className="flex items-end justify-between mb-8 md:mb-10">
                 <div>
-                    <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] rounded-full bg-white text-[#062365] px-3 py-1.5">
+                    <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] rounded-full bg-[#EEF1F7] text-[#062365] px-3 py-1.5">
                         For your week
                     </span>
                     <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mt-4 max-w-2xl text-[#051D35]">
@@ -52,7 +52,7 @@ export default function ResourcesTeaser() {
                             ? "bg-[#062365] text-white"
                             : tone === "deep"
                                 ? "bg-[#051D35] text-white"
-                                : "bg-white text-[#051D35]";
+                                : "bg-[#EEF1F7] text-[#051D35]";
                     return (
                         <Link
                             key={title}

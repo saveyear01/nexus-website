@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { geistMono, nunito } from "@/fonts/fonts";
+import { ChatProvider } from "@/component/sections/ChatProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,7 +18,7 @@ export default function RootLayout({
       <body
         className={`${nunito.variable} ${geistMono.variable} font-sans antialiased`}
       >
-        {children}
+        <ChatProvider>{children}</ChatProvider>
       </body>
     </html>
   );

@@ -25,7 +25,7 @@ export default function GiveBand() {
 
                 <div className="relative grid grid-cols-1 md:grid-cols-12 gap-10 items-end">
                     <div className="md:col-span-7">
-                        <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] rounded-full bg-white/10 text-[#D4DAE9] px-3 py-1.5">
+                        <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] rounded-full bg-white/10 text-[#EEF1F7] px-3 py-1.5">
                             Partner with us
                         </span>
                         <h2 className="text-4xl md:text-7xl font-extrabold tracking-tight mt-4 leading-[1.02]">
@@ -40,7 +40,7 @@ export default function GiveBand() {
                     <div className="md:col-span-5 flex flex-col md:items-end gap-3">
                         <Link
                             href="/give"
-                            className="inline-flex items-center gap-2 w-full md:w-auto justify-center rounded-full bg-white text-[#062365] font-semibold px-7 py-4 hover:bg-[#D4DAE9] transition-colors"
+                            className="inline-flex items-center gap-2 w-full md:w-auto justify-center rounded-full bg-white text-[#062365] font-semibold px-7 py-4 hover:bg-[#EEF1F7] transition-colors"
                         >
                             Give Now <ArrowUpRight size={18} />
                         </Link>

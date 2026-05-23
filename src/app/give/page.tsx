@@ -11,7 +11,7 @@ export default function GivePage() {
       <main className="mt-6 md:mt-10 px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           <div className="lg:col-span-7">
-            <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] rounded-full bg-white text-[#062365] px-3 py-1.5">
+            <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] rounded-full bg-[#EEF1F7] text-[#062365] px-3 py-1.5">
               Partner with us
             </span>
             <h1 className="text-5xl md:text-8xl font-extrabold tracking-tight mt-4 leading-[1.02] text-[#051D35]">
@@ -23,7 +23,7 @@ export default function GivePage() {
               us.
             </p>
 
-            <div className="mt-10 rounded-[2rem] bg-white p-6 md:p-8">
+            <div className="mt-10 rounded-[2rem] bg-[#EEF1F7] p-6 md:p-8">
               <div className="text-xs font-bold uppercase tracking-[0.2em] text-[#051D35]/60 mb-4">
                 Choose an amount
               </div>
@@ -31,7 +31,7 @@ export default function GivePage() {
                 {AMOUNTS.map((a) => (
                   <button
                     key={a}
-                    className="h-14 rounded-full bg-[#D4DAE9] hover:bg-[#062365] hover:text-white text-[#062365] font-bold transition-colors"
+                    className="h-14 rounded-full bg-white hover:bg-[#062365] hover:text-white text-[#062365] font-bold transition-colors"
                   >
                     ${a}
                   </button>
@@ -42,7 +42,7 @@ export default function GivePage() {
                 <label className="text-sm font-semibold text-[#051D35]/70">
                   Or enter another amount
                 </label>
-                <div className="mt-2 flex items-center rounded-full bg-[#D4DAE9] focus-within:ring-2 focus-within:ring-[#062365] px-5">
+                <div className="mt-2 flex items-center rounded-full bg-white focus-within:ring-2 focus-within:ring-[#062365] px-5">
                   <span className="text-[#051D35]/40 font-bold">$</span>
                   <input
                     type="number"
@@ -63,7 +63,7 @@ export default function GivePage() {
 
           <aside className="lg:col-span-5 space-y-6">
             <div className="rounded-[2rem] bg-[#051D35] text-white p-8">
-              <div className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4DAE9]">
+              <div className="text-xs font-bold uppercase tracking-[0.2em] text-[#EEF1F7]">
                 Where it goes
               </div>
               <ul className="mt-6 space-y-4 text-white/80">
@@ -82,7 +82,7 @@ export default function GivePage() {
               </ul>
             </div>
 
-            <div className="rounded-[2rem] bg-white p-8">
+            <div className="rounded-[2rem] bg-[#EEF1F7] p-8">
               <div className="font-extrabold text-xl text-[#051D35]">
                 Other ways to give
               </div>

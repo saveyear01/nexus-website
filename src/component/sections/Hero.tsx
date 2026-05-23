@@ -1,142 +1,144 @@
-import { ArrowUpRight } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 
-const HERO_IMAGE = "/images/claudia-raya-QO7yanWbYsc-unsplash.jpg";
+import { useChat } from "@/component/sections/ChatProvider";
+import {
+    ArrowRight,
+    BookOpenText,
+    Lock,
+    ShieldCheck,
+    Sparkles,
+} from "lucide-react";
+import { useState } from "react";
 
+const SUGGESTIONS: { label: string; query: string }[] = [
+    { label: "Covenant", query: "What does Nexus believe about covenant?" },
+    { label: "Prayer", query: "Help me start praying." },
+    { label: "Small groups", query: "How do I find a small group?" },
+    { label: "Mission", query: "What does Nexus believe about mission?" },
+    { label: "Giving", query: "Where does my giving go at Nexus?" },
+];
+
+/**
+ * Homepage hero. Single-column, center-aligned, plain white background.
+ *
+ * The compose input is the visual anchor — Ask Nexus is positioned as the
+ * primary way into the church.
+ */
 export default function Hero() {
     return (
-        <section className="px-4 md:px-8 pt-8 md:pt-12">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
-                <div className="lg:col-span-6 xl:col-span-5">
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] text-[#051D35]">
-                        Nexus Covenant
-                        <br />
-                        Church &mdash; a people
-                        <br />
-                        connected through Christ.
-                    </h1>
-                    <p className="mt-6 max-w-lg text-base md:text-lg text-[#051D35]/70 leading-relaxed">
-                        We&apos;re a covenant of believers gathering each week to worship,
-                        grow, and serve our city. Wherever you are on the journey,
-                        there&apos;s a place at the table for you.
-                    </p>
-                    <div className="mt-8 flex flex-wrap items-center gap-3">
-                        <Link
-                            href="/sermons"
-                            className="inline-flex items-center gap-2 rounded-full bg-[#062365] hover:bg-[#051D35] text-white font-semibold px-6 py-3.5 transition-colors"
-                        >
-                            Learn more
-                            <ArrowUpRight size={18} />
-                        </Link>
-                        <Link
-                            href="/give"
-                            className="inline-flex items-center gap-2 rounded-full bg-white hover:bg-white/80 text-[#062365] font-semibold px-6 py-3.5 transition-colors border border-[#051D35]/10"
-                        >
-                            Partner with us
-                        </Link>
-                    </div>
+        <section className="relative bg-white px-4 md:px-8 pt-28 md:pt-20 pb-20 md:pb-28">
+            <div className="relative max-w-3xl mx-auto text-center">
+                <span className="inline-flex items-center gap-2 rounded-full bg-[#EEF1F7] text-[#062365] px-3 py-1.5">
+                    <Sparkles size={14} />
+                    <span className="text-xs font-bold uppercase tracking-[0.2em]">
+                        AI Assistant · Trained on Nexus
+                    </span>
+                </span>
+
+                <h1 className="mt-6 text-6xl md:text-8xl lg:text-[7.5rem] font-extrabold tracking-tight leading-[0.95] text-[#051D35]">
+                    Ask <span className="text-[#062365]">Nexus</span>
+                    <br />
+                    anything<span className="text-[#062365]">.</span>
+                </h1>
+
+                <p className="mt-6 mx-auto max-w-2xl text-lg md:text-xl text-[#051D35]/70 leading-relaxed">
+                    A conversational way to explore what we believe, how we gather,
+                    and the next step on your faith journey &mdash; with answers
+                    drawn from our sermons, articles, and resources.
+                </p>
+
+                <div className="mt-10">
+                    <AskCompose />
                 </div>
 
-                <div className="lg:col-span-6 xl:col-span-7">
-                    <PhotoCollage />
+                <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm">
+                    <TrustBadge icon={ShieldCheck} text="Grounded in Nexus teaching" />
+                    <TrustBadge icon={BookOpenText} text="Every answer cited" />
+                    <TrustBadge icon={Lock} text="Free, private, no account" />
                 </div>
             </div>
         </section>
     );
 }
 
-function PhotoCollage() {
+function AskCompose() {
+    const { open } = useChat();
+    const [value, setValue] = useState("");
+
+    const handoff = (query: string) => {
+        const trimmed = query.trim();
+        if (!trimmed) {
+            open();
+            return;
+        }
+        setValue("");
+        open(trimmed);
+    };
+
     return (
-        <div className="grid grid-cols-6 grid-rows-6 gap-3 md:gap-4 h-[420px] md:h-[520px]">
-            <div className="col-span-3 row-span-3 relative rounded-3xl overflow-hidden bg-[#C7C7D0]">
-                <Image
-                    src={HERO_IMAGE}
-                    alt="Community gathering"
-                    fill
-                    className="object-cover"
-                    priority
+        <div>
+            <form
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    handoff(value);
+                }}
+                className="flex items-center gap-2 rounded-2xl bg-white border border-[#051D35]/10 focus-within:border-[#062365] transition-colors p-2 md:p-2.5 shadow-[0_24px_60px_-24px_rgba(5,29,53,0.35)] text-left"
+            >
+                <span
+                    aria-hidden
+                    className="grid place-items-center h-11 w-11 md:h-12 md:w-12 rounded-xl bg-[#EEF1F7] text-[#062365] shrink-0"
+                >
+                    <Sparkles size={20} />
+                </span>
+                <label htmlFor="hero-ask" className="sr-only">
+                    Ask Nexus a question
+                </label>
+                <input
+                    id="hero-ask"
+                    value={value}
+                    onChange={(e) => setValue(e.target.value)}
+                    placeholder="Ask anything — prayer, covenant, small groups..."
+                    className="flex-1 min-w-0 bg-transparent outline-none text-[#051D35] placeholder:text-[#051D35]/40 font-medium text-base md:text-lg"
                 />
+                <button
+                    type="submit"
+                    className="inline-flex items-center gap-1.5 rounded-xl bg-[#062365] hover:bg-[#051D35] text-white font-semibold px-4 md:px-5 h-11 md:h-12 text-sm transition-colors shrink-0"
+                >
+                    Ask
+                    <ArrowRight size={14} />
+                </button>
+            </form>
+
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+                <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#051D35]/50 mr-1">
+                    Try
+                </span>
+                {SUGGESTIONS.map((s) => (
+                    <button
+                        key={s.label}
+                        type="button"
+                        onClick={() => handoff(s.query)}
+                        className="text-xs font-semibold rounded-full bg-white text-[#062365] border border-[#051D35]/10 px-3 py-1.5 hover:bg-[#062365] hover:text-white hover:border-transparent transition-colors"
+                    >
+                        {s.label}
+                    </button>
+                ))}
             </div>
-
-            <Tile className="col-span-2 row-span-2 bg-[#062365]">
-                <CollagePattern variant="dots" />
-            </Tile>
-
-            <Tile className="col-span-1 row-span-2 bg-[#051D35]">
-                <CollagePattern variant="diag" />
-            </Tile>
-
-            <Tile className="col-span-3 row-span-3 bg-[#C7C7D0] relative">
-                <Image
-                    src={HERO_IMAGE}
-                    alt="Worship"
-                    fill
-                    className="object-cover opacity-90"
-                />
-                <div className="absolute inset-0 bg-[#062365]/10" />
-            </Tile>
-
-            <Tile className="col-span-2 row-span-2 bg-white border border-[#051D35]/5">
-                <div className="h-full w-full grid place-items-center p-4 text-center">
-                    <div>
-                        <div className="text-3xl md:text-4xl font-extrabold text-[#062365]">
-                            320+
-                        </div>
-                        <div className="text-xs uppercase tracking-[0.18em] text-[#051D35]/60 mt-1">
-                            Covenant members
-                        </div>
-                    </div>
-                </div>
-            </Tile>
-
-            <Tile className="col-span-1 row-span-2 bg-[#062365]">
-                <div className="h-full w-full grid place-items-center text-white font-bold text-xs tracking-[0.2em] rotate-[-90deg]">
-                    EST. 2013
-                </div>
-            </Tile>
         </div>
     );
 }
 
-function Tile({
-    className = "",
-    children,
+function TrustBadge({
+    icon: Icon,
+    text,
 }: {
-    className?: string;
-    children?: React.ReactNode;
+    icon: React.ComponentType<{ size?: number; className?: string }>;
+    text: string;
 }) {
     return (
-        <div
-            className={`relative rounded-3xl overflow-hidden ${className}`}
-        >
-            {children}
-        </div>
-    );
-}
-
-function CollagePattern({ variant }: { variant: "dots" | "diag" }) {
-    if (variant === "dots") {
-        return (
-            <div
-                aria-hidden
-                className="absolute inset-0 opacity-30"
-                style={{
-                    backgroundImage:
-                        "radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px)",
-                    backgroundSize: "14px 14px",
-                }}
-            />
-        );
-    }
-    return (
-        <div
-            aria-hidden
-            className="absolute inset-0 opacity-25"
-            style={{
-                backgroundImage:
-                    "repeating-linear-gradient(45deg, rgba(255,255,255,0.3) 0px, rgba(255,255,255,0.3) 1px, transparent 1px, transparent 12px)",
-            }}
-        />
+        <span className="inline-flex items-center gap-1.5 text-[#051D35]/70 font-semibold">
+            <Icon size={14} className="text-[#062365]" />
+            {text}
+        </span>
     );
 }

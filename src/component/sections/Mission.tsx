@@ -3,10 +3,10 @@ import { Sparkles } from "lucide-react";
 export default function Mission() {
     return (
         <section className="px-4 md:px-8 py-16 md:py-24">
-            <div className="rounded-[2rem] bg-white p-8 md:p-14">
+            <div className="rounded-[2rem] bg-[#EEF1F7] p-8 md:p-14">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
                     <div className="md:col-span-4">
-                        <div className="inline-flex items-center gap-2 rounded-full bg-[#D4DAE9] text-[#062365] px-3 py-1.5">
+                        <div className="inline-flex items-center gap-2 rounded-full bg-white text-[#062365] px-3 py-1.5">
                             <Sparkles size={14} />
                             <span className="text-xs font-bold uppercase tracking-[0.2em]">
                                 Our Covenant

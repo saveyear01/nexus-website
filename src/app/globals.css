@@ -52,7 +52,7 @@
 :root {
   --radius: 1rem;
 
-  --background: #d4dae9;
+  --background: #ffffff;
   --foreground: #051d35;
 
   --card: #ffffff;
@@ -92,5 +92,25 @@
   }
   body {
     font-family: var(--font-nunito), system-ui, sans-serif;
+  }
+}
+
+/**
+ * Gentle vertical float for decorative hero shapes.
+ * Disabled automatically for users with reduced-motion preferences.
+ */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
   }
 }

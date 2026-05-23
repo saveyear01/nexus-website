@@ -9,7 +9,6 @@ import Mission from "@/component/sections/Mission";
 import Pillars from "@/component/sections/Pillars";
 import ResourcesTeaser from "@/component/sections/ResourcesTeaser";
 import SplashScreen from "@/component/sections/SplashScreen";
-import Streams from "@/component/sections/Streams";
 import { useEffect, useState } from "react";
 
 const SPLASH_KEY = "nexus-splash-shown";
@@ -33,7 +32,7 @@ export default function Home() {
   }, []);
 
   if (phase === "checking") {
-    return <div className="min-h-screen bg-[#D4DAE9]" />;
+    return <div className="min-h-screen bg-[#EEF1F7]" />;
   }
 
   if (phase === "splash") {
@@ -43,13 +42,12 @@ export default function Home() {
   return (
     <div className="max-w-[1440px] mx-auto pt-4 md:pt-6 pb-8">
       <Header />
-      <main className="mt-6 md:mt-10">
+      <main>
         <Hero />
         <Mission />
         <LatestSermon />
         <Pillars />
         <ResourcesTeaser />
-        <Streams />
         <GiveBand />
       </main>
       <Footer />

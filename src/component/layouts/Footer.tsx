@@ -27,7 +27,7 @@ export default function Footer() {
 
                         <Link
                             href="/give"
-                            className="mt-6 inline-flex items-center gap-2 rounded-full bg-white text-[#062365] font-semibold px-5 py-3 hover:bg-[#D4DAE9] transition-colors"
+                            className="mt-6 inline-flex items-center gap-2 rounded-full bg-white text-[#062365] font-semibold px-5 py-3 hover:bg-[#EEF1F7] transition-colors"
                         >
                             Become a partner <ArrowUpRight size={16} />
                         </Link>
